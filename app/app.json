@@ -1,0 +1,21 @@
+{
+  "package_id": "com.zhengjiaming01622.headsupmarket",
+  "edition": "202601",
+  "name": "HeadsUp Market",
+  "version": "1.0.0",
+  "min_app_version": "2.2.10",
+  "min_sdk_version": "0.0.16",
+  "entrypoint": "index.html",
+  "permissions": [
+    {
+      "name": "network",
+      "desc": "This app fetches live cryptocurrency prices from the CoinGecko public API.",
+      "whitelist": [
+        "https://api.coingecko.com"
+      ]
+    }
+  ],
+  "supported_languages": [
+    "en"
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=576, initial-scale=1">
+<title>HeadsUp Market — Even G2 Glanceable Crypto Ticker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Phone-side frame: in the real Even App this page runs inside the WebView
+       and only the 576x288 canvas below is mirrored to the glasses. -->
+  <main id="stage">
+    <section id="glasses" aria-label="G2 display preview (576x288)">
+      <div id="statusbar">
+        <span id="clock">--:--</span>
+        <span id="netstate">● LIVE</span>
+      </div>
+      <div id="coin">
+        <div id="coin-name">BTC</div>
+        <div id="coin-price">$-----</div>
+        <div id="coin-change">24h —</div>
+      </div>
+      <div id="spark" aria-hidden="true"></div>
+      <div id="detail"></div>
+      <div id="footer">▲▼ switch coin · tap = details · 2×tap = exit</div>
+    </section>
+
+    <section id="panel">
+      <h1>HeadsUp Market</h1>
+      <p class="sub">Glanceable crypto ticker for Even Realities G2.
+      In browser mode use <b>↑ / ↓</b> to switch coins, <b>Enter</b> for details,
+      <b>Esc</b> to simulate exit. On real glasses the same actions come from
+      temple / R1 ring gestures via the Even Hub bridge.</p>
+      <p id="log" class="log">boot…</p>
+    </section>
+  </main>
+  <script src="even-bridge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

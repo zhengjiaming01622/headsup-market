@@ -1,0 +1,56 @@
+/* HeadsUp Market — styled to match the G2 panel: 576x288, green monochrome.
+   The glasses render 4-bit greyscale green; we approximate the 16 levels with
+   a small green palette on black (black = pixel off = best contrast). */
+:root {
+  --g0: #000000;   /* off */
+  --g1: #0a2e12;
+  --g2: #14532d;
+  --g3: #22c55e;   /* mid green  */
+  --g4: #4ade80;
+  --g5: #bbf7d0;   /* brightest  */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #111827;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #e5e7eb;
+  display: flex; justify-content: center; padding: 24px 12px;
+}
+#stage { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+
+/* ---- The 576x288 glasses canvas ---- */
+#glasses {
+  width: 576px; height: 288px;
+  background: var(--g0);
+  border: 2px solid var(--g2);
+  border-radius: 10px;
+  padding: 10px 18px;
+  display: flex; flex-direction: column;
+  color: var(--g5);
+  overflow: hidden;
+  user-select: none;
+}
+#statusbar {
+  display: flex; justify-content: space-between;
+  font-size: 15px; color: var(--g4);
+  border-bottom: 1px solid var(--g2); padding-bottom: 6px;
+}
+#coin { margin-top: 10px; }
+#coin-name { font-size: 30px; font-weight: 700; color: var(--g4); letter-spacing: 2px; }
+#coin-price { font-size: 64px; font-weight: 800; line-height: 1.05; color: var(--g5); }
+#coin-change { font-size: 24px; margin-top: 2px; }
+#coin-change.up { color: var(--g5); }
+#coin-change.down { color: var(--g3); }
+#spark { font-size: 20px; letter-spacing: 2px; color: var(--g3); margin-top: 8px; min-height: 24px; }
+#detail { font-size: 17px; color: var(--g4); margin-top: 6px; min-height: 22px; white-space: pre-line; }
+#footer { margin-top: auto; font-size: 13px; color: var(--g2); }
+
+/* ---- Phone-side explainer panel ---- */
+#panel { max-width: 576px; }
+#panel h1 { font-size: 20px; margin-bottom: 6px; }
+#panel .sub { font-size: 13px; line-height: 1.55; color: #9ca3af; }
+#panel .log {
+  margin-top: 10px; font-size: 12px; color: #6ee7b7;
+  background: #052e16; border: 1px solid #14532d; border-radius: 6px;
+  padding: 8px 10px; min-height: 32px; white-space: pre-line;
+}
